@@ -652,14 +652,14 @@
 
       // Function to accept cookies
       function acceptCookies() {
-        setCookie("cookieConsent", "true", 365); // Set cookie to remember the user's choice for 1 year
+        setCookie("cookieConsent", "true", 1); // Set cookie to remember the user's choice for 1 year
         document.getElementById("cookieConsentBanner").style.display = "none"; // Hide the banner
         document.getElementById("cookieConsentOverlay").style.display = "none"; // Hide the overlay
       }
 
       // Function to reject cookies (redirect the user out of the website)
       function rejectCookies() {
-        setCookie("cookieConsent", "false", 365); // Set a cookie indicating rejection
+        setCookie("cookieConsent", "false", 1); // Set a cookie indicating rejection
         alert(
           "You must accept cookies to use this website. You will be redirected."
         );
