@@ -653,7 +653,7 @@ function acceptCookies() {
 function rejectCookies() {
     setCookie("cookieConsent", "false", 365); // Set a cookie indicating rejection
     alert("You must accept cookies to use this website. You will be redirected.");
-    window.location.href = "https://www.google.com"; // Redirect to another website (for example, Google)
+    window.close(); // Redirect to another website (for example, Google)
 }
 
 // Show the cookie banner if the user hasn't accepted cookies
