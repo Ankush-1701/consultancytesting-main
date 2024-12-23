@@ -4477,6 +4477,18 @@ textarea {
 /*-----------------------------------------------------------------------------------*/
 /*	34. Cookies
 /*-----------------------------------------------------------------------------------*/
+/* Full-screen overlay */
+.cookie-consent-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+    z-index: 9999;
+    display: none; /* Initially hidden */
+}
+
 /* Cookie Consent Banner */
 .cookie-consent-banner {
     position: fixed;
@@ -4488,9 +4500,11 @@ textarea {
     text-align: center;
     padding: 10px 0;
     font-size: 14px;
-    z-index: 1000;
+    z-index: 10000; /* Higher than the overlay */
+    display: none; /* Initially hidden */
 }
 
+/* Button styling */
 .cookie-consent-banner button {
     background-color: #45be84;
     color: white;
@@ -4500,10 +4514,12 @@ textarea {
     margin: 0 5px;
 }
 
+/* Accept Button Hover Effect */
 .cookie-consent-banner button:hover {
     background-color: #36a675;
 }
 
+/* Links in the banner */
 .cookie-consent-banner a {
     color: #45be84;
     text-decoration: none;
@@ -4522,3 +4538,7 @@ textarea {
     background-color: #d32f2f;
 }
 
+/* Smooth transition for showing and hiding */
+.cookie-consent-overlay, .cookie-consent-banner {
+    transition: all 0.3s ease;
+}
