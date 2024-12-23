@@ -37,6 +37,7 @@
 	32. FONT ICON PAGES
 	33. DIVIDERS
 	34. RESPONSIVE
+	35. Cookies
 	
 	font-family: 'Lato', sans-serif;
 	font-family: 'Montserrat', sans-serif;
@@ -547,84 +548,7 @@ ul.circled li:before {
     color: #45be84;
 }
 
-/* Media Queries */
 
-/* For Tablets (max-width: 1024px) */
-@media (max-width: 1024px) {
-    .map-wrapper {
-        flex-direction: column; /* Stack elements vertically */
-        align-items: center; /* Center align the content */
-    }
-
-    #map iframe {
-        height: 250px; /* Adjust height for tablet */
-    }
-
-    .map-wrapper .text {
-        width: 90%; /* Contact section takes full width */
-        padding: 20px;
-        text-align: center; /* Center the text */
-    }
-
-    .contact-info li {
-        display: block; /* Stack contact info items vertically */
-        margin-bottom: 10px; /* Add space between items */
-    }
-}
-
-/* For Phones (max-width: 768px) */
-@media (max-width: 768px) {
-    .map-wrapper {
-        flex-direction: column; /* Stack map and text vertically */
-        align-items: center; /* Center align content */
-    }
-
-    #map iframe {
-        height: 200px; /* Adjust height for smaller screens */
-    }
-
-    .map-wrapper .text {
-        width: 100%; /* Full-width contact info */
-        padding: 15px;
-        text-align: center; /* Center the contact details */
-    }
-
-    .contact-info li {
-        display: block; /* Stack contact info items vertically */
-        margin-bottom: 10px; /* Add space between items */
-    }
-
-    .contact-info i {
-        margin-right: 5px; /* Reduce icon space for phones */
-    }
-
-    .section-title h3 {
-        font-size: 18px; /* Adjust font size for smaller screens */
-    }
-}
-
-/* For Large Screens/PC (min-width: 1025px) */
-@media (min-width: 1025px) {
-    .map-wrapper {
-        flex-direction: row; /* Keep elements side by side */
-        align-items: center;
-    }
-
-    #map iframe {
-        height: 460px; /* Set a larger height for PC */
-    }
-
-    .map-wrapper .text {
-        width: 35%; /* Contact info takes 35% */
-        padding: 30px;
-        text-align: left;
-    }
-
-    .contact-info li {
-        display: inline-block; /* Keep items inline */
-        margin: 0 10px; /* Spacing between items */
-    }
-}
 footer .post-list {
     list-style: none;
     margin: 0;
@@ -4469,4 +4393,121 @@ textarea {
 	    width: 280px;
 	    margin: 0 auto 10px;
 	}
+}
+/* Media Queries */
+
+/* For Tablets (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .map-wrapper {
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center; /* Center align the content */
+    }
+
+    #map iframe {
+        height: 250px; /* Adjust height for tablet */
+    }
+
+    .map-wrapper .text {
+        width: 90%; /* Contact section takes full width */
+        padding: 20px;
+        text-align: center; /* Center the text */
+    }
+
+    .contact-info li {
+        display: block; /* Stack contact info items vertically */
+        margin-bottom: 10px; /* Add space between items */
+    }
+}
+
+/* For Phones (max-width: 768px) */
+@media (max-width: 768px) {
+    .map-wrapper {
+        flex-direction: column; /* Stack map and text vertically */
+        align-items: center; /* Center align content */
+    }
+
+    #map iframe {
+        height: 200px; /* Adjust height for smaller screens */
+    }
+
+    .map-wrapper .text {
+        width: 100%; /* Full-width contact info */
+        padding: 15px;
+        text-align: center; /* Center the contact details */
+    }
+
+    .contact-info li {
+        display: block; /* Stack contact info items vertically */
+        margin-bottom: 10px; /* Add space between items */
+    }
+
+    .contact-info i {
+        margin-right: 5px; /* Reduce icon space for phones */
+    }
+
+    .section-title h3 {
+        font-size: 18px; /* Adjust font size for smaller screens */
+    }
+}
+
+/* For Large Screens/PC (min-width: 1025px) */
+@media (min-width: 1025px) {
+    .map-wrapper {
+        flex-direction: row; /* Keep elements side by side */
+        align-items: center;
+    }
+
+    #map iframe {
+        height: 460px; /* Set a larger height for PC */
+    }
+
+    .map-wrapper .text {
+        width: 35%; /* Contact info takes 35% */
+        padding: 30px;
+        text-align: left;
+    }
+
+    .contact-info li {
+        display: inline-block; /* Keep items inline */
+        margin: 0 10px; /* Spacing between items */
+    }
+}
+
+
+/*-----------------------------------------------------------------------------------*/
+/*	34. Cookies
+/*-----------------------------------------------------------------------------------*/
+/* Cookie Consent Banner */
+.cookie-consent-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+    z-index: 1000;
+}
+
+.cookie-consent-banner button {
+    background-color: #45be84;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.cookie-consent-banner button:hover {
+    background-color: #36a675;
+}
+
+.cookie-consent-banner a {
+    color: #45be84;
+    text-decoration: none;
+}
+
+.cookie-consent-banner a:hover {
+    color: #36a675;
 }
