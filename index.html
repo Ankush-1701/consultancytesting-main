@@ -615,58 +615,73 @@
     </div>
     <!--/.body-wrapper -->
 
+    <!-- Full-screen overlay (blocks interaction) -->
+    <div id="cookieConsentOverlay" class="cookie-consent-overlay"></div>
+
     <!-- Cookie Consent Banner -->
-<div id="cookieConsentBanner" class="cookie-consent-banner">
-    <p>We use cookies to improve your experience. By using our site, you consent to cookies. <a href="/privacy-policy">Learn more</a></p>
-    <button id="acceptCookies">Accept</button>
-    <button id="rejectCookies">Reject</button>
-</div>
+    <div id="cookieConsentBanner" class="cookie-consent-banner">
+      <p>
+        We use cookies to improve your experience. By using our site, you
+        consent to cookies. <a href="/privacy-policy">Learn more</a>
+      </p>
+      <button id="acceptCookies">Accept</button>
+      <button id="rejectCookies">Reject</button>
+    </div>
 
     <script>
-// Function to set a cookie
-function setCookie(name, value, days) {
-    const d = new Date();
-    d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000)); // Expires in 'days'
-    const expires = "expires=" + d.toUTCString();
-    document.cookie = name + "=" + value + ";" + expires + ";path=/";
-}
+      // Function to set a cookie
+      function setCookie(name, value, days) {
+        const d = new Date();
+        d.setTime(d.getTime() + days * 24 * 60 * 60 * 1000); // Expires in 'days'
+        const expires = "expires=" + d.toUTCString();
+        document.cookie = name + "=" + value + ";" + expires + ";path=/";
+      }
 
-// Function to get a cookie
-function getCookie(name) {
-    const nameEQ = name + "=";
-    const ca = document.cookie.split(';');
-    for (let i = 0; i < ca.length; i++) {
-        let c = ca[i];
-        while (c.charAt(0) === ' ') c = c.substring(1, c.length);
-        if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
-    }
-    return null;
-}
+      // Function to get a cookie
+      function getCookie(name) {
+        const nameEQ = name + "=";
+        const ca = document.cookie.split(";");
+        for (let i = 0; i < ca.length; i++) {
+          let c = ca[i];
+          while (c.charAt(0) === " ") c = c.substring(1, c.length);
+          if (c.indexOf(nameEQ) === 0)
+            return c.substring(nameEQ.length, c.length);
+        }
+        return null;
+      }
 
-// Function to accept cookies
-function acceptCookies() {
-    setCookie("cookieConsent", "true", 365); // Set cookie to remember the user's choice for 1 year
-    document.getElementById("cookieConsentBanner").style.display = "none"; // Hide the banner
-}
+      // Function to accept cookies
+      function acceptCookies() {
+        setCookie("cookieConsent", "true", 365); // Set cookie to remember the user's choice for 1 year
+        document.getElementById("cookieConsentBanner").style.display = "none"; // Hide the banner
+        document.getElementById("cookieConsentOverlay").style.display = "none"; // Hide the overlay
+      }
 
-// Function to reject cookies (redirect the user out of the website)
-function rejectCookies() {
-    setCookie("cookieConsent", "false", 365); // Set a cookie indicating rejection
-    alert("You must accept cookies to use this website. You will be redirected.");
-    window.close(); // Redirect to another website (for example, Google)
-}
+      // Function to reject cookies (redirect the user out of the website)
+      function rejectCookies() {
+        setCookie("cookieConsent", "false", 365); // Set a cookie indicating rejection
+        alert(
+          "You must accept cookies to use this website. You will be redirected."
+        );
+        window.close(); // Redirect to another website (for example, Google)
+      }
 
-// Show the cookie banner if the user hasn't accepted cookies
-if (!getCookie("cookieConsent")) {
-    document.getElementById("cookieConsentBanner").style.display = "block";
-}
+      // Show the cookie banner and overlay if the user hasn't accepted cookies
+      if (!getCookie("cookieConsent")) {
+        document.getElementById("cookieConsentBanner").style.display = "block";
+        document.getElementById("cookieConsentOverlay").style.display = "block"; // Show the overlay
+      }
 
-// Event listener for the accept button
-document.getElementById("acceptCookies").addEventListener("click", acceptCookies);
+      // Event listener for the accept button
+      document
+        .getElementById("acceptCookies")
+        .addEventListener("click", acceptCookies);
 
-// Event listener for the reject button
-document.getElementById("rejectCookies").addEventListener("click", rejectCookies);
-</script>
+      // Event listener for the reject button
+      document
+        .getElementById("rejectCookies")
+        .addEventListener("click", rejectCookies);
+    </script>
 
     <script src="style/js/jquery.min.js"></script>
     <script src="style/js/bootstrap.min.js"></script>
