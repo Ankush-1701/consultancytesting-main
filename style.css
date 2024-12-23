@@ -489,47 +489,141 @@ ul.circled li:before {
     background-size: cover !important;
     background-position: center center !important;
 }
+/* General Styles */
 .map-wrapper {
     display: flex; /* Enable flexbox for side-by-side layout */
     align-items: center; /* Vertically align content */
     justify-content: space-between; /* Add spacing between the map and the text */
     gap: 20px; /* Space between the map and the contact details */
     margin-right: 0;
+    flex-wrap: wrap; /* Ensure content wraps on smaller screens */
 }
 
 #map {
-    width: 60%; /* Map takes 60% of the available width */
-    height: 460px; /* Fixed height for consistency */
-    margin: 20px;
-    
+    width: 100%; /* Make map take full width within its container */
+    height: auto; /* Allow height to adjust automatically */
+    margin: 20px 0;
+    max-width: 800px; /* Limit the map's width to 800px on larger screens */
 }
 
+#map iframe {
+    width: 100%; /* Make iframe take full width of the container */
+    height: 300px; /* Set default height for iframe */
+    border: 0;
+}
+
+/* Contact information styles */
 .map-wrapper .text {
-    width: 35%; /* Contact details take 35% of the available width */
-    padding: 30px;
+    width: 100%; /* Full width for text on smaller screens */
+    max-width: 400px; /* Limit the text section's width */
+    padding: 20px;
     background: #FFF;
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
     text-align: left; /* Align text to the left */
 }
 
+/* Contact information styles */
 .contact-info {
     margin: 0;
     padding: 0;
     list-style: none;
 }
+
 .contact-info li {
     display: inline-block;
     margin: 0 10px;
 }
+
 .contact-info i {
     margin-right: 7px;
     color: #45be84;
 }
+
 .contact-info a {
-    color: inherit
+    color: inherit;
 }
+
 .contact-info a:hover {
-    color: #45be84
+    color: #45be84;
+}
+
+/* Media Queries */
+
+/* For Tablets (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .map-wrapper {
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center; /* Center align the content */
+    }
+
+    #map iframe {
+        height: 250px; /* Adjust height for tablet */
+    }
+
+    .map-wrapper .text {
+        width: 90%; /* Contact section takes full width */
+        padding: 20px;
+        text-align: center; /* Center the text */
+    }
+
+    .contact-info li {
+        display: block; /* Stack contact info items vertically */
+        margin-bottom: 10px; /* Add space between items */
+    }
+}
+
+/* For Phones (max-width: 768px) */
+@media (max-width: 768px) {
+    .map-wrapper {
+        flex-direction: column; /* Stack map and text vertically */
+        align-items: center; /* Center align content */
+    }
+
+    #map iframe {
+        height: 200px; /* Adjust height for smaller screens */
+    }
+
+    .map-wrapper .text {
+        width: 100%; /* Full-width contact info */
+        padding: 15px;
+        text-align: center; /* Center the contact details */
+    }
+
+    .contact-info li {
+        display: block; /* Stack contact info items vertically */
+        margin-bottom: 10px; /* Add space between items */
+    }
+
+    .contact-info i {
+        margin-right: 5px; /* Reduce icon space for phones */
+    }
+
+    .section-title h3 {
+        font-size: 18px; /* Adjust font size for smaller screens */
+    }
+}
+
+/* For Large Screens/PC (min-width: 1025px) */
+@media (min-width: 1025px) {
+    .map-wrapper {
+        flex-direction: row; /* Keep elements side by side */
+        align-items: center;
+    }
+
+    #map iframe {
+        height: 460px; /* Set a larger height for PC */
+    }
+
+    .map-wrapper .text {
+        width: 35%; /* Contact info takes 35% */
+        padding: 30px;
+        text-align: left;
+    }
+
+    .contact-info li {
+        display: inline-block; /* Keep items inline */
+        margin: 0 10px; /* Spacing between items */
+    }
 }
 footer .post-list {
     list-style: none;
