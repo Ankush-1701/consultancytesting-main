@@ -4497,6 +4497,7 @@ textarea {
     border: none;
     padding: 5px 10px;
     cursor: pointer;
+    margin: 0 5px;
 }
 
 .cookie-consent-banner button:hover {
@@ -4511,3 +4512,13 @@ textarea {
 .cookie-consent-banner a:hover {
     color: #36a675;
 }
+
+/* Reject Button Styling */
+.cookie-consent-banner button#rejectCookies {
+    background-color: #f44336; /* Red color for Reject button */
+}
+
+.cookie-consent-banner button#rejectCookies:hover {
+    background-color: #d32f2f;
+}
+
