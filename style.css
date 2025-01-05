@@ -2275,7 +2275,7 @@ figure a .text-overlay .info span {
 /*	20. FEATURES
 /*-----------------------------------------------------------------------------------*/
 .feature {
-    padding: 0 0 0 90px;
+    padding: 0 0 0 0;
     position: relative;
     margin-bottom: 40px;
 }
