@@ -570,8 +570,7 @@ $(window).load(function () {
   });
 });
 
-// Set the expiry date and time (1 month from deployment)
-const expiryDate = new Date("2025-03-05T13:37:00"); // Adjust this to the desired date and time (YYYY-MM-DDTHH:MM:SS)
+
 
 // Get the current date and time
 const currentDate = new Date();
