@@ -572,24 +572,7 @@ $(window).load(function () {
 
 
 
-// Get the current date and time
-const currentDate = new Date();
 
-// Check if the current date and time is past the expiry date
-if (currentDate > expiryDate) {
-  // Display a message with the expiration date and time
-  document.body.innerHTML = `
-    <h1>Page Expired</h1>
-    <p>This website expired on ${expiryDate.toLocaleString()}.</p>
-    <p>Please contact the administrator for further assistance.</p>
-    <p> Designed by <a href="https://gssoftech.netlify.app/">GS Softech</a><p>
-  `;
-  document.body.style.textAlign = "center";
-  document.body.style.marginTop = "20%";
-  document.body.style.fontSize = "24px";
-  document.body.style.color = "#333";
-  document.body.style.fontFamily = "Arial, sans-serif";
-}
 
 /*-----------------------------------------------------------------------------------*/
 /*	FORM
